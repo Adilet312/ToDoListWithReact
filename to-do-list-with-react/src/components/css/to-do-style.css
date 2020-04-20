@@ -1,0 +1,77 @@
+body{
+  margin: 0;
+
+}
+.container{
+  width:300px;
+  margin: 100px auto;
+
+}
+.content{
+ box-sizing: border-box;
+}
+ul{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul li{
+  list-style-type: none;
+  padding: 10px;
+  border-bottom: 1px solid salmon;
+  box-sizing:border-box;
+
+}
+
+
+.new-task input {
+    width: 250px;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 10px;
+    outline: none;
+
+}
+.new-task input:active{
+  background-color:  solid 2px salmon;
+}
+.new-task button:active{
+  background-color: solid 2px salmon;
+}
+.new-task button {
+  width:50px;
+  height: 30px;
+  outline: none;
+  box-sizing: border-box;
+  background-color: salmon;
+  color:white;
+  font-weight: bold;
+
+}
+.delete{
+  float: right;
+  color: white;
+  background-color: salmon;
+  border-radius: 5px;
+  padding: 2px 4px;
+  text-transform: lowercase;
+}
+.delete:hover{
+  color: white;
+
+}
+.clear{
+  background-color: salmon;
+  float: right;
+  color: white;
+  width:300px;
+}
+.clear:hover{
+  color:white;
+}
+h1{
+text-align: center;
+}
+.true{
+  text-decoration: line-through;
+}
