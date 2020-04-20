@@ -1,10 +1,8 @@
-body{
-  margin: 0;
 
-}
 .container{
   width:300px;
   margin: 100px auto;
+  border:2px solid salmon;
 
 }
 .content{
@@ -72,6 +70,10 @@ ul li{
 h1{
 text-align: center;
 }
-.true{
+.crossed{
   text-decoration: line-through;
+}
+body{
+  background-image: url('../image/toDoList.jpeg');
+  margin-top: 200px;
 }
