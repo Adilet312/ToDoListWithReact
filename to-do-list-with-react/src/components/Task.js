@@ -1,74 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import InputTask from './InputTask';
+import ListTasks from './ListTasks';
 import "./css/to-do-style.css";
 
 class Task extends React.Component{
   constructor(){
     super();
     this.state = {
-      newtask:'',
+
       list:[],
 
     }
   }
-  inputData = (event) => this.setState({newtask:event.target.value});
 
+  deleteTask = (tempList) => this.setState({list:tempList});
+  updateTask = (tempList) => this.setState({list:tempList})
   clearList = () => this.setState({list:[]});
 
-  addTask = () => {
+  addTask = (givenTask) => {
     let tempList = [];
     tempList = this.state.list;
-    let task = { nameTask:this.state.newtask, done:false};
+    let task = { nameTask:givenTask, done:false};
     tempList.push(task);
     this.setState({list:tempList});
-    this.setState({newtask:''});
-  }
 
-  deleteTask = (index) => {
-    let tempList = [];
-    tempList = this.state.list;
-    tempList.splice(index,1)
-    console.log(tempList);
-    this.setState({list:tempList});
   }
-
-  selectTask = (index) => {
-    let tempList = [];
-    tempList = this.state.list;
-    tempList[index].done = !tempList[index].done ;
-    console.log(tempList[index].done)
-    this.setState({list:tempList});
-  }
-
   render(){
-    // const wholeList = this.state.list.map((e,idx) => <li key={idx} className={false}>
-    //                                                     <input onClick = {() => this.selectTask(idx)} type='checkBox'/>{e.nameTask}<span
-    //                                                     onClick = {() => this.deleteTask(idx)}  className='delete'>X</span>
-    //                                                   </li>);
-    return (
-      <div className='container'>
-        <h1>To Do List</h1>
-        <div className='new-task'>
-          <input placeholder='Enter a new task' onKeyUp={this.inputData}/>
-          <button onClick={this.addTask}>Add</button>
+  return (
+        <div className='container'>
+          <h1>To Do List</h1>
+          <InputTask addTaskFromParent={this.addTask}/>
+          <div className='content'>
+           <ListTasks deleteTask={this.deleteTask}  updateTask = {this.updateTask} list = {this.state.list}/>
+          </div>
+          <button className='clear' onClick={this.clearList}>Clear</button>
         </div>
-        <div className='content'>
-          <ul>
-            {
 
-              this.state.list.map((e,idx) =>   {
-                let isDone = e.done ? "crossed" : '';
-                return (<li key={idx} className={isDone}><input onClick = {() => this.selectTask(idx)} type='checkBox'/>{e.nameTask}
-                            <span onClick = {() => this.deleteTask(idx)}  className='delete'>X</span>
-                        </li>)
-                      })
-            }
-          </ul>
-        </div>
-        <button className='clear' onClick={this.clearList}>Clear</button>
-      </div>
-
-    );
+      );
+    }
   }
-}
-export default Task;
+  export default Task;

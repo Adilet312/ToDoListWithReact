@@ -6,7 +6,7 @@
 
 ## Description
 
-_An To Do List is simple app that creates new task and it has options to select,delete, and clear items._
+_To Do List is simple app that creates new task and it has options to select,delete, and clear items._
 
 ## Getting Started
 
