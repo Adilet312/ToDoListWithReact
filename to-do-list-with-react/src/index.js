@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Task from './components/Task';
+import TaskControl from './components/TaskControl';
 
 
 
@@ -12,7 +12,7 @@ import Task from './components/Task';
 ReactDOM.render(
 
 
-  <Task/>,
+  <TaskControl/>,
   document.getElementById('root')
 
 );

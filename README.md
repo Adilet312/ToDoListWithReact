@@ -21,8 +21,10 @@ These instructions will get you a copy of the project up and running on your loc
 * npm run start
 ### Specifications
 
-* A user can see all albums.
-* A user can see photos based on given album's id.
+* A user can create list of tasks.
+* A user can delete task by clicking remove tag.
+* A user can cross out tasks which has done.
+* A user can clear all list.
 ## Technologies Used
 
 _HTML, CSS, JavaScript, React, IDE Atom_
